@@ -73,7 +73,7 @@ export function getOfflineCampusAnswer(question: string): string | null {
     }
 
     const eventLines = listedEvents.map((event) => `${event.title} — ${event.date}. ${event.statusText}.`)
-    return `Here's what the KIIT Pulse snapshot shows (checked ${lastChecked}):\\n${eventLines.join('\\n')}\\nConfirm any changes with the official listings: https://kiit.ac.in/events/`
+    return `Here's what the KIIT Pulse snapshot shows (checked ${lastChecked}):\n${eventLines.join('\n')}\nConfirm any changes with the official listings: https://kiit.ac.in/events/`
   }
 
   if (/societ|club|join|photograph|camera|coding|robot|poetry|theatre|theater|volunteer/.test(normalized)) {

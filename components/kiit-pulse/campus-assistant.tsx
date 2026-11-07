@@ -110,7 +110,7 @@ export function CampusAssistant() {
   }
 
   return (
-    <div className="campus-assistant">
+    <div className={`campus-assistant${isOpen ? ' is-open' : ''}`}>
       {isOpen && (
         <section className="assistant-panel" role="dialog" aria-modal="false" aria-labelledby="assistant-title">
           <header className="assistant-header">
@@ -157,7 +157,6 @@ export function CampusAssistant() {
                     <span /><span /><span />
                   </div>
                 )}
-                <div ref={transcriptEndRef => transcriptEndRef?.scrollIntoView({ block: 'end' })} aria-hidden="true" />
               </div>
             )}
             {error && (
@@ -196,7 +195,7 @@ export function CampusAssistant() {
         ref={launcherRef}
         onClick={() => setIsOpen((current) => !current)}
         aria-expanded={isOpen}
-        aria-controls="assistant-panel"
+        aria-haspopup="dialog"
         aria-label={isOpen ? 'Close KIIT Pulse assistant' : 'Open KIIT Pulse assistant'}
       >
         {isOpen ? <X size={19} aria-hidden="true" /> : <MessageCircle size={19} aria-hidden="true" />}
